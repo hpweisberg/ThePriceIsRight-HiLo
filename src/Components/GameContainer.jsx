@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import DisplayPiecesContainer from "./DisplayPiecesContainer";
-import SelectedContainer from "./SelectedContainer";
+import SelectedContainer from "./selectedContainer";
 
 import airFreshenerImg from '../assets/gameItems/airFreshener.png'
 import coconutMilkImg from '../assets/gameItems/coconutMilk.png'
@@ -50,10 +50,14 @@ const GameContainer = () => {
   const [message, setMessage] = useState('');
 
   const handleItemSelection = (item) => {
-    if (selectedItems.length < 3 && !selectedItems.includes(item)) {
+    if (selectedItems.length < 3 && !selectedItems.some(selectedItem => selectedItem.name === item.name)) {
       setSelectedItems([...selectedItems, item]);
     }
   }
+  
+  useEffect(() => {
+    console.log(selectedItems);
+  }, [selectedItems])
 
   const handleItemDeselection = (item) => {
     setSelectedItems(selectedItems.filter(selectedItem => selectedItem !== item));
@@ -76,7 +80,7 @@ const GameContainer = () => {
   }
 
   return (
-    <main>
+    <main className="flex flex-col items-center">
       <div>
         {message && <p>{message}</p>}
         <SelectedContainer
@@ -85,12 +89,13 @@ const GameContainer = () => {
           comparePrices={comparePrices}
           handleReset={handleReset}
         />
-        <p>Display un-selected pieces here</p>
+        
       </div>
       <div>
         <DisplayPiecesContainer
           gamePieces={gamePieces}
           handleItemSelection={handleItemSelection}
+          selectedItems={selectedItems}
           />
       </div>
     </main>

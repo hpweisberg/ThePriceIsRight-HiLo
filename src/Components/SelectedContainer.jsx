@@ -1,9 +1,21 @@
-const SelectedContianer = ({ selectedItem }) => {
+/* eslint-disable react/prop-types */
+import SelectedPiece from "./SelectedPiece";
+
+const SelectedContainer = ({ selectedItems, handleItemDeselection }) => {
   return (
-    <div>
-      <p>test</p>
+    <div className="border-2 border-red-500 flex justify-around text-center items-center w-[40vw] h-[30vh]">
+      {selectedItems?.map((item, index) => {
+        return (
+          <SelectedPiece
+            gamePiece={item}
+            key={index}
+            handleItemDeselection={handleItemDeselection}
+          />
+        )
+      }
+      )}
     </div>
   );
 }
 
-export default SelectedContianer;
+export default SelectedContainer;

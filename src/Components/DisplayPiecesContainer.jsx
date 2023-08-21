@@ -2,7 +2,7 @@
 import DisplayPieces from "./DisplayPieces";
 
 
-const DisplayPiecesContainer = ({ gamePieces, handleItemSelection }) => {
+const DisplayPiecesContainer = ({ gamePieces, handleItemSelection, selectedItems }) => {
 
 
   return (
@@ -13,6 +13,7 @@ const DisplayPiecesContainer = ({ gamePieces, handleItemSelection }) => {
             gamePiece={gamePiece}
             key={index}
             handleItemSelection={handleItemSelection}
+            selectedItems={selectedItems}
           />
         )
       })}

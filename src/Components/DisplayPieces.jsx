@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 
-const DisplayPieces = ({ gamePiece, handleItemSelection }) => {
+const DisplayPieces = ({ gamePiece, handleItemSelection, selectedItems }) => {
   DisplayPieces.propTypes = {
     gamePiece: PropTypes.shape({
       image: PropTypes.string.isRequired,
@@ -8,6 +9,14 @@ const DisplayPieces = ({ gamePiece, handleItemSelection }) => {
       price: PropTypes.number.isRequired
     }).isRequired
   };
+
+// if the gamePiece is included in the selectedItems, I want to show a blank image.
+const isSelected = selectedItems.some(selectedItem => selectedItem.name === gamePiece.name);
+
+if (isSelected) {
+  return null;
+}
+
 
 
   return (
