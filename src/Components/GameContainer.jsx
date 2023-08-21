@@ -54,7 +54,7 @@ const GameContainer = () => {
       setSelectedItems([...selectedItems, item]);
     }
   }
-  
+
   useEffect(() => {
     console.log(selectedItems);
   }, [selectedItems])
@@ -65,7 +65,10 @@ const GameContainer = () => {
 
   const comparePrices = () => {
     const selectedLowestPrice = Math.min(...selectedItems.map(item => item.price));
-    const unselectedHighestPrice = Math.max(...gamePieces.filter(item => !selectedItems.includes(item)).map(item => item.price));
+    const remainingGamePieces = gamePieces.filter(item =>
+      !selectedItems.some(selectedItem => selectedItem.name === item.name)
+    );
+    const unselectedHighestPrice = Math.max(...remainingGamePieces.map(item => item.price));
 
     if (selectedLowestPrice > unselectedHighestPrice) {
       setMessage('You won!');
@@ -80,23 +83,37 @@ const GameContainer = () => {
   }
 
   return (
-    <main className="flex flex-col items-center">
-      <div>
-        {message && <p>{message}</p>}
+    <main className="flex flex-col items-center gap-10">
+      <div className="flex justify-center items-center m-4 ">
+        <div className="w-1/5 mr-20 text-center">
+          {message ?
+            <p className={`p-2 hover:transition-colors shadow-md ${message === 'You won!' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'}`}>
+              {message}
+            </p>
+            :
+            ''
+          }
+        </div>
         <SelectedContainer
           selectedItems={selectedItems}
           handleItemDeselection={handleItemDeselection}
-          comparePrices={comparePrices}
           handleReset={handleReset}
+          message={message}
         />
-        
+        <div className="w-1/5 ml-20">
+          {message ? <button className="bg-blue-500 text-white p-2 h-20 hover:bg-blue-600 transition-colors" onClick={handleReset}>Reset</button>
+            :
+            <button className="bg-blue-500 text-white p-2 h-20 hover:bg-blue-600 transition-colors" onClick={comparePrices}>Compare Prices</button>
+          }
+        </div>
       </div>
       <div>
         <DisplayPiecesContainer
           gamePieces={gamePieces}
           handleItemSelection={handleItemSelection}
           selectedItems={selectedItems}
-          />
+          message={message}
+        />
       </div>
     </main>
   );
