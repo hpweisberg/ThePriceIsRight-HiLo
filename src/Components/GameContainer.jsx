@@ -11,7 +11,8 @@ import coconutMilkImg from '/public/gameItems/coconutMilk.png';
 import dogTreatsImg from '/public/gameItems/dogTreats.png';
 import hotSauceImg from '/public/gameItems/hotSauce.png';
 import iceCreamImg from '/public/gameItems/iceCream.png';
-import redBullImg from '/public/gameItems/redBull.png';
+import redBullImg from '/public/gameItems/redbull.png';
+
 
 
 
