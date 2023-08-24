@@ -5,12 +5,13 @@ import SelectedContainer from "./SelectedContainer";
 import ConfettiEffect from "./ConfettiEffect";
 
 
-import airFreshenerImg from '../assets/gameItems/airFreshener.png';
-import coconutMilkImg from '../assets/gameItems/coconutMilk.png';
-import dogTreatsImg from '../assets/gameItems/dogTreats.png';
-import hotSauceImg from '../assets/gameItems/hotSauce.png';
-import iceCreamImg from '../assets/gameItems/iceCream.png';
-import redBullImg from '../assets/gameItems/redBull.png';
+
+import airFreshenerImg from '../../public/gameItems/airFreshener.png';
+import coconutMilkImg from '../../public/gameItems/coconutMilk.png';
+import dogTreatsImg from '../../public/gameItems/dogTreats.png';
+import hotSauceImg from '../../public/gameItems/hotSauce.png';
+import iceCreamImg from '../../public/gameItems/iceCream.png';
+import redBullImg from '../../public/gameItems/redBull.png';
 
 
 
