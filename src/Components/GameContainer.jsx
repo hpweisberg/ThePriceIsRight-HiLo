@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 
 import DisplayPiecesContainer from "./DisplayPiecesContainer";
-import SelectedContainer from "./selectedContainer";
+import SelectedContainer from "./SelectedContainer";
+import ConfettiEffect from "./ConfettiEffect";
 
-import airFreshenerImg from '../assets/airFreshener.png';
-import coconutMilkImg from '../assets/coconutMilk.png';
-import dogTreatsImg from '../assets/dogTreat.png';
-import hotSauceImg from '../assets/hotSauce.png';
-import iceCreamImg from '../assets/iceCream.png';
-import redBullImg from '../assets/redBull.png';
+
+import airFreshenerImg from '../assets/gameItems/airFreshener.png';
+import coconutMilkImg from '../assets/gameItems/coconutMilk.png';
+import dogTreatsImg from '../assets/gameItems/dogTreats.png';
+import hotSauceImg from '../assets/gameItems/hotSauce.png';
+import iceCreamImg from '../assets/gameItems/iceCream.png';
+import redBullImg from '../assets/gameItems/redBull.png';
 
 
 
@@ -138,7 +140,7 @@ const GameContainer = () => {
           
           }
 
-          
+
         </div>
 
 
