@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import DisplayPieces from "./DisplayPieces";
 
 const shuffleArray = (array) => {

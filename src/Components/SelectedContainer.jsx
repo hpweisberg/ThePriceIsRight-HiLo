@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import SelectedPiece from "./SelectedPiece";
 
 const SelectedContainer = ({ selectedItems, handleItemDeselection, message }) => {
