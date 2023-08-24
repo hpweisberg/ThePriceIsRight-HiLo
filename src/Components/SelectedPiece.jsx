@@ -3,7 +3,7 @@ const SelectedPiece = ({ gamePiece, handleItemDeselection, message }) => {
   return (
     <div
       className='flex flex-col items-center'
-      onClick={message ? null : () => handleItemDeselection(gamePiece)}
+      onClick={(message === 'You won!' || message === 'You lost!') ? null : () => handleItemDeselection(gamePiece)}
     >
       <img
         src={gamePiece.image}
