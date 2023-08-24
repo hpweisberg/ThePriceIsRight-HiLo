@@ -21,7 +21,7 @@ const DisplayPieces = ({ gamePiece, handleItemSelection, selectedItems, message 
 
   return (
     <div
-      className='flex flex-col items-center'
+      className='flex flex-col items-center cursor-pointer'
       onClick={() => handleItemSelection(gamePiece)}
     >
       <img
